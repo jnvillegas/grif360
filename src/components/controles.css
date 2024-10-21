@@ -1,0 +1,328 @@
+#banner {
+  height: 550px;
+  width: 80px;
+  position: absolute;
+  z-index: 100000;
+  top: 35%;
+  right: 0px;
+  transition: all 1s ease;
+}
+
+#zoomoutbutton {
+  background-image: url("../assets/zoom_out.png");
+}
+
+#zoominbutton {
+  background-image: url("../assets/zoom_in.png");
+}
+
+#fullscreenbutton {
+  background-image: url("../assets/fullscreen.png");
+}
+
+#linkbutton {
+  background-image: url("../assets/carrito.png");
+}
+
+#vrbutton {
+  background-image: url("../assets/modovr.png");
+}
+
+.controlbutton {
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  opacity: 0.5;
+  transition: 0.3s;
+  margin-bottom: 20px;
+}
+
+.controlbutton:hover {
+  width: 70px;
+  height: 70px;
+}
+
+.a-enter-vr-button {
+  display: none;
+}
+
+.hidden-menu {
+  right: -200px !important;
+  transition: all 2s ease;
+}
+
+.hidden-scenes {
+  bottom: -200px !important;
+  transition: all 2s ease;
+}
+
+#escenasContainer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 100000;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s ease;
+}
+
+#escenasMenu {
+  opacity: 1 !important;
+  display: block;
+  max-width: 60%;
+  max-height: 100px;
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  border: 1px solid black;
+  scroll-behavior: smooth;
+}
+
+#escenasMenu img.escenaPic {
+  cursor: pointer;
+  border: 1px solid white;
+  min-height: 70px;
+}
+
+.escenaIcon {
+  font-size: 12px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  margin-right: 20px;
+  color: white;
+  max-width: 100px;
+  font-weight: bold;
+}
+
+.escenaIcon label {
+  max-width: 80px;
+  white-space: nowrap;
+  overflow: hidden;
+  justify-content: center;
+  text-overflow: ellipsis;
+}
+
+#tooltip {
+  position: absolute;
+  border-radius: 15%;
+  background-color: black;
+  width: fit-content;
+  height: 40px;
+  border: 1px solid white;
+  z-index: 100000;
+  color: white;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  justify-content: center;
+  opacity: 1;
+  transition: all 1s ease;
+}
+
+#tooltip.hidden {
+  display: none;
+  height: 0px;
+  width: 0px;
+  opacity: 0.5;
+}
+
+#menuFlotante {
+  position: absolute;
+  top: 40%;
+  right: 0px;
+  z-index: 1000;
+  padding: 10px;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0); */
+  transition: transform 0.3s ease-in-out;
+}
+
+.itemMenuFloat {
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Añade una transición para que el cambio sea suave */
+}
+
+.itemMenuFloat:hover {
+  transform: scale(1.1); /* Escala el elemento a 110% de su tamaño original */
+  //background-color: yellow; /* Cambia el color de fondo, opcional */
+}
+
+.titleExperiencia {
+  position: absolute;
+  left: 50px;
+  top: 0px;
+  z-index: 1000;
+  font-family: "Spartan", sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+  margin: 0px;
+  padding: 9px 0px;
+}
+
+@media (max-width: 700px) {
+  .titleExperiencia {
+    display: none;
+  }
+}
+
+#visitasComponent {
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  z-index: 1000;
+  background-color: rgba(255, 255, 255, 0);
+  border: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+#menuFlotanteOtras {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+  padding: 0px;
+  transition: transform 0.3s ease-in-out;
+  width: 100%;
+}
+
+.icon-rel-360 {
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+  overflow: hidden;
+  display: inline-block;
+  transition: transform 0.5s ease;
+  /* animation: slow-rotation infinite 10s linear; */
+}
+
+.image-icon-rel-360 {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+/* .otra_360{	
+	border-radius: 50%; 
+	border: 2px solid black;
+	overflow: hidden;
+	display:inline-block; 
+	transition: transform 0.5s ease; 
+	
+  } */
+
+.icon-rel-360:hover {
+  transform: scale(1.1);
+}
+
+/* .icon-rel-360:hover {
+	animation: hover-scale 0.5s ease forwards, slow-rotation infinite 10s linear;
+  } */
+
+/* @media(prefers-reduced-motion: no-preference){
+	.otra_360{
+		animation: slow-rotation infinite 10s linear;
+	}
+  }*/
+
+/* @keyframes slow-rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+} */
+
+/* @keyframes hover-scale {
+	from {
+	  transform: scale(1);
+	}
+	to {
+	  transform: scale(1.8);
+	}
+  } */
+
+#menuFlotanteRedes {
+  position: absolute;
+  /* bottom: 1%; */
+  left: 0px;
+  bottom: 0px;
+  z-index: 1000;
+  padding: 0px;
+  transition: transform 0.3s ease-in-out;
+  width: 80px;
+  margin: 0px;
+}
+
+#menuFlotanteEscenas {
+  position: absolute;
+  /* bottom: 1%; */
+  bottom: 0px;
+  right: 0px;
+  z-index: 1000;
+  margin: 0px;
+  padding: 0px;
+  transition: transform 0.3s ease-in-out;
+}
+
+#menuFlotanteEnlaces {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  right: 50%; 
+  z-index: 1000;
+  padding: 0px;
+  transition: transform 0.3s ease-in-out;
+  width: 300px;  
+}
+
+.icon-enlace-car {
+  border-radius: 50%;
+  /* width: '100%';
+  height: '100%'; */
+  padding: 5px;
+  overflow: visible;
+  /* display: inline-block; */
+  transition: transform 0.5s ease;
+  border: 4px solid rgba(255,255,255,0.5);
+  animation: slow-rotation infinite 10s linear; 
+}
+
+
+
+
+
+@keyframes slow-rotation {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.image-icon-enlace-car {
+  width: 100%;
+  height: 100%;
+  object-fit: fill;
+}
+
+.ant-menu-submenu {
+  width: auto !important;
+  height: auto !important;
+  min-width: 200px; /* Adjust this as needed */
+}
+
+.ant-menu-submenu-popup {
+  max-width: none !important;
+}

@@ -1,0 +1,4 @@
+input[type="radio"]:checked + label img{
+    
+    border: 2px solid rgb(64, 163, 255); 
+  }

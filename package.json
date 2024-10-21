@@ -1,0 +1,62 @@
+{
+  "name": "make360",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
+    "aframe": "^1.5.0",
+    "aframe-look-at-component": "^1.0.0",
+    "aframe-react": "^4.4.0",
+    "animate.css": "^4.1.1",
+    "antd": "^5.14.1",
+    "gapi-script": "^1.2.0",
+    "react": "^18.2.0",
+    "react-copy-to-clipboard": "^5.1.0",
+    "react-dom": "^18.2.0",
+    "react-ga4": "^2.1.0",
+    "react-router-dom": "^6.22.2",
+    "react-scripts": "^5.0.1",
+    "web-vitals": "^3.5.2",
+    "workbox-background-sync": "^6.6.0",
+    "workbox-broadcast-update": "^6.6.0",
+    "workbox-cacheable-response": "^6.6.0",
+    "workbox-core": "^6.6.0",
+    "workbox-expiration": "^6.6.0",
+    "workbox-google-analytics": "^6.6.1",
+    "workbox-navigation-preload": "^6.6.0",
+    "workbox-precaching": "^6.6.0",
+    "workbox-range-requests": "^6.6.0",
+    "workbox-routing": "^6.6.0",
+    "workbox-strategies": "^6.6.0",
+    "workbox-streams": "^6.6.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/react-copy-to-clipboard": "^5.0.7"
+  }
+}
