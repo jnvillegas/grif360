@@ -70,3 +70,58 @@ self.addEventListener('message', (event) => {
 });
 
 // Any other custom service worker logic can go here.
+// service-worker.js
+
+const CACHE_NAME = 'offline-cache-v1';
+
+// Lista de URLs para cachear (aquí incluyes tus rutas locales)
+const urlsToCache = [
+  '/',
+  '/index.html',
+  '/styles.css',
+  '/app.js',
+  '/manifest.json'
+];
+
+// Al instalar el Service Worker, cachea los recursos locales
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => {
+      return cache.addAll(urlsToCache);
+    })
+  );
+});
+
+// Al hacer fetch, verifica si el recurso es una imagen de Google Drive
+self.addEventListener('fetch', event => {
+  const request = event.request;
+  
+  // Si es una imagen de Google Drive, cachea y sirve desde el caché
+  if (request.url.includes('drive.google.com') || request.url.includes('googleusercontent.com')) {
+    event.respondWith(
+      caches.match(request).then(response => {
+        // Si está en caché, servir desde caché
+        if (response) {
+          return response;
+        }
+        // Si no está en caché, buscar desde la red y agregar al caché
+        return fetch(request).then(networkResponse => {
+          return caches.open(CACHE_NAME).then(cache => {
+            cache.put(request, networkResponse.clone());
+            return networkResponse;
+          });
+        });
+      }).catch(() => {
+        // En caso de estar offline y no tener el recurso cacheado, puedes servir un placeholder
+        return caches.match('/images/offline-placeholder.png');
+      })
+    );
+  } else {
+    // Para todas las demás requests
+    event.respondWith(
+      caches.match(request).then(response => {
+        return response || fetch(request);
+      })
+    );
+  }
+});
